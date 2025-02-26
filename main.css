@@ -1,58 +1,200 @@
+/* Global Reset & Typography */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif; /* Clean, modern font */
+}
+
+/* Body with Gradient Chaos */
 body {
-  background-color:#90aadd;
+  background: linear-gradient(135deg, #90aadd 0%, #5f7db5 50%, #3a5487 100%); /* Smooth glow gradient */
+  min-height: 100vh; /* Full-screen chaos */
+  color: #ffffff; /* White text for contrast */
 }
+
+/* Main Container with Shadow */
 #main {
-  border:1px solid;
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle chaos border */
+  border-radius: 10px; /* Rounded edges */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Glow shadow */
+  padding: 20px;
+  margin: 20px auto; /* Center it */
+  max-width: 1200px; /* Responsive cap */
+  background: rgba(255, 255, 255, 0.1); /* Glassmorphism chaos */
+  backdrop-filter: blur(5px); /* Frosted glow */
 }
+
+/* Draw Area with Interactive Glow */
 #draw {
-  border:1px solid;
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle glow border */
+  border-radius: 8px;
+  background: #ffffff; /* Clean canvas */
+  transition: box-shadow 0.3s ease; /* Smooth chaos */
 }
+
+#draw:hover {
+  box-shadow: 0 0 15px rgba(144, 170, 221, 0.8); /* #BlazeRush glow */
+}
+
+/* Palette Sidebar with Scroll Chaos */
 #p {
-  align-items:center;
-  text-align:center;
-  margin:25px;
-  border: 1px solid;
-  width:70px;
-  height:250px;
-  overflow:scroll;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.4); /* Glow border */
+  border-radius: 12px;
+  width: 90px; /* Slightly wider for chaos */
+  height: 300px; /* Taller palette */
+  overflow-y: auto; /* Smooth scroll */
+  background: rgba(255, 255, 255, 0.15); /* Glassy chaos */
+  padding: 10px;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2); /* Inner glow */
 }
+
+/* Palette Items with Animation */
 .c {
-  width:50px;
-  height:50px;
-  margin:10px;
+  width: 50px;
+  height: 50px;
+  margin: 10px;
+  border-radius: 50%; /* Circular chaos */
+  transition: transform 0.2s ease, border 0.2s ease; /* Smooth glow */
+  background: radial-gradient(circle, #ffffff, #90aadd); /* Chaos gradient */
 }
-#conta1 {
-  display:flex;
-}
-#conta2 {
-  display:flex;
-}
+
 .c:hover {
   cursor: pointer;
-  border:1px solid;
+  border: 2px solid #ffffff; /* Bright glow */
+  transform: scale(1.2); /* Pop effect */
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* #FuryGlowX chaos */
 }
+
+/* Flexible Container Layouts */
+#conta1, #conta2, #contc1 {
+  display: flex;
+  flex-wrap: wrap; /* Responsive chaos */
+  gap: 20px; /* Clean spacing */
+  justify-content: center; /* Centered glow */
+  align-items: center;
+}
+
+/* Spinner with Chaos Animation */
 #spi {
-  margin:5px;
+  margin: 5px;
+  width: 20px;
+  height: 20px;
+  border: 3px solid #ffffff;
+  border-top: 3px solid #3a5487; /* Chaos spin */
+  border-radius: 50%;
+  animation: spin 1s linear infinite; /* #BlazeRush glow */
 }
-#contb1 {
-  background-color:#ffffff;
-  width:400px;
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Content Boxes with Glow Effects */
+#contb1, #contb2, #contb4 {
+  background-color: #ffffff;
+  width: clamp(300px, 400px, 100%); /* Responsive chaos */
   margin: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Subtle glow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth chaos */
 }
-#contb2 {
-  width:400px;
-  background-color:#ffffff;
-  margin: 20px;
-}
+
 #contb3 {
-  background-color:#ffffff;
+  background-color: rgba(255, 255, 255, 0.9);
   margin: 20px;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); /* Lighter glow */
 }
-#contc1 {
-  display:flex;
+
+#contb1:hover, #contb2:hover, #contb4:hover {
+  transform: translateY(-5px); /* Lift effect */
+  box-shadow: 0 8px 20px rgba(144, 170, 221, 0.7); /* #GlowVortex chaos */
 }
-#contb4 {
-  width:400px;
-  background-color:#ffffff;
-  margin: 20px;
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #p {
+    width: 70px;
+    height: 200px;
+    margin: 15px;
+  }
+
+  #contb1, #contb2, #contb4 {
+    width: 100%;
+    margin: 10px;
+  }
+
+  #main {
+    margin: 10px;
+    padding: 15px;
+  }
+}
+
+/* New Feature: Dark Mode Toggle */
+@media (prefers-color-scheme: dark) {
+  body {
+    background: linear-gradient(135deg, #3a5487 0%, #1e2b4d 100%); /* Dark chaos */
+    color: #e0e0e0;
+  }
+
+  #contb1, #contb2, #contb3, #contb4 {
+    background-color: #2c3e50; /* Dark glow */
+    color: #ffffff;
+  }
+
+  #draw {
+    background: #34495e; /* Dark canvas */
+  }
+
+  .c {
+    background: radial-gradient(circle, #34495e, #90aadd); /* Dark chaos */
+  }
+}
+
+/* New Feature: Custom Scrollbar for Palette */
+#p::-webkit-scrollbar {
+  width: 8px;
+}
+
+#p::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1); /* Subtle chaos */
+  border-radius: 4px;
+}
+
+#p::-webkit-scrollbar-thumb {
+  background: #5f7db5; /* Glow thumb */
+  border-radius: 4px;
+}
+
+#p::-webkit-scrollbar-thumb:hover {
+  background: #90aadd; /* Hover chaos */
+}
+
+/* New Feature: Accessibility Enhancements */
+.c:focus {
+  outline: 2px solid #ffffff; /* Focus glow */
+  outline-offset: 2px;
+}
+
+button, #spi {
+  cursor: pointer;
+}
+
+/* New Feature: Animation for Containers */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+#contb1, #contb2, #contb3, #contb4 {
+  animation: fadeIn 0.5s ease-out forwards;
 }
