@@ -157,12 +157,15 @@ function loadSprite(i) {
   };
   drawTile(0,0,curdr,dctx);
 };
+function clearSprite() {
+  curdr = Array(bigtilew).fill(null).map(() => [...fla]); 
+};
 function saveSprite(i) {
   sprites[i] = curdr;
-  curdr = Array(bigtilew).fill(null).map(() => [...fla]); 
 };
 function prevSprite() {
   saveSprite(sprin);
+  clearSprite();
   if (sprin - 1 >= 0) {
     sprin -= 1;
   };
@@ -171,6 +174,7 @@ function prevSprite() {
 };
 function nextSprite() {
   saveSprite(sprin);
+  clearSprite();
   sprin += 1
   spi.textContent = sprin;
   loadSprite(sprin);
@@ -194,6 +198,5 @@ function executeCode(code) {
         console.error("Error executing code:", e);
     }
 }
-
 
 logPalette(0,colors.length);
