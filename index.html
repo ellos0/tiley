@@ -1,0 +1,41 @@
+<body>
+  <div id='contc1'>
+    <div id='contb2'>
+      <h5>about</h5>
+      v 0.1
+      <p>hello! Tiley is a simple, open source, tile based game engine that is heavily inspired by bitsy, designed to help you learn javascript as it can be used in games, as well as programatic logic as a whole.</p>
+      <p>The project is availiable on github under a CC BY-NC 4.0 license. This is also version 0.1 (the first version) so please be merciful with your disputes.</p>
+      <p>Thanks!</p>
+      <button onclick="document.getElementById('contb2').style['visibility']='hidden';document.getElementById('contb2').style['position']='absolute';" type='button'>hide this</button>
+      <br>
+      <a href='https://github.com/ellos0/tiley'>github</a>
+    </div>
+    <div id='contb1'>
+      draw
+      <div id='conta1'>
+        <button onclick='prevSprite();' type='button'>prev</button>
+        <button onclick='nextSprite();' type='button'>next</button>
+        <div id='spi'>0</div>
+      </div>
+      <div id='conta2'>
+        <canvas height='250' id='draw' width='250'></canvas>
+        <div id='p'>
+          Palette
+        </div>
+      </div>
+      <input id='cin' type='color'>
+      <button onclick='addColorToPalette();' type='button'>Add Color</button>
+    </div>
+    <div id='contb4'>
+      play your game!
+      <canvas height='250' id='main' width='250'></canvas>
+    </div>
+  </div>
+  <br>
+  <div id='contb3'>
+    javascript
+    <button onclick='runUserCode()' type='button'>run code</button>
+    <br>
+    <textarea id='js'></textarea>
+  </div>
+</body>
